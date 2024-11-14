@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Namespaces sendo utilizados para trabalhar com o JSF (prefixo h) e a biblioteca PrimeFaces (prefixo p) -->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>APS 2024/2 - CC4</title>
+
+        <!-- Importando o FontAwesome para utilização de ícones no site -->  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+        <!-- Importando o ScrollReveal para animações ao rolar a página --> 
+        <script src="https://unpkg.com/scrollreveal"></script>
+        
+        <!--Importando o CSS-->
+        <h:outputStylesheet name="css/style.css"/>
+        <!--Importando o JavaScript-->
+        <h:outputScript name="js/script.js" target="body" />
+        
+    </h:head>
+    <h:body>
+
+        <!--Ínicio do Header-->
+        <header>
+            <div class="nav-bar">
+                <a href="#" class="logo">Aps</a>
+
+                <div class="navegacao">
+                    <div class="nav-itens">
+                        <a href="#home">Home</a>
+                        <a href="#temperatura">Clima</a>
+                        <a href="#sobre-nos">Sobre</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Fim do Header-->
+
+        <!--Ínicio da seção HOME (Seção Inicial)-->
+        <section class="home flex-center" id="home">
+            <div class="home-container">
+                <div class="margem">
+                    <a href="#"><i class="margem"></i></a>
+                </div>
+                <div class="info">
+                    <h2>Sistema de estação meteorológica para monitoramento de variáveis ambientais<span class="ponto">.</span></h2> 
+                    <br></br>
+                    <p>Os dados abaixo são utilizados com intuito de acompanhar as condições climáticas em tempo real e prever mudanças ambientais, auxiliando em decisões relacionadas à agricultura, planejamento urbano e monitoramento de desastres naturais.</p>
+                    <a href="#sobre-nos" class="btn">SOBRE NÓS <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+
+                <div class="home-img">
+                    <img src="#{resource['imagens/foto_dht11.png']}" alt=""></img>
+                </div>
+            </div>
+
+            <a href="#sobre" class="scroll-down">Scroll Down <i class="fas fa-arrow-down"></i></a>
+
+        </section>
+        <!--Fim da seção HOME (Seção Inicial)-->
+
+        <!--Ínicio da seção CLIMA (Seção que exibe as variáveis ambientais)-->
+        <section class="temperatura section" id="temperatura">
+            <div class="container flex-center">
+                <h1 class="section-title-01">Elementos Climáticos</h1>
+                <h2 class="section-title-02">Elementos Climáticos</h2>
+            </div>
+
+            <h:form id="formClima">
+                <div class="cartoes-temperatura">
+                    <div class="cartoes">
+                        <ul class="temp-list">
+                            <li class="item">
+                                <p><span>Temperatura - </span>
+                                    <h:outputText id="otpTemperatura" value="#{bgrClima.temperatura}Cº"></h:outputText>
+                                </p>
+                            </li>
+                            <li class="item">
+                                <p><span>Umidade - </span>
+                                    <h:outputText id="otpUmidade" value="#{bgrClima.umidade}%"></h:outputText>
+                                </p>
+                            </li>
+                            <li class="item">
+                                <p><span>Precipitação - </span>
+                                    <h:outputText id="otpPrecipitacao" value="#{bgrClima.precipitacao}"></h:outputText>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="botao-centralizado">
+                        <a href="#temperatura">
+                            <h:commandButton 
+                                id="btnIniciar" 
+                                class="btn"
+                                value="#{bgrClima.mensagem}"
+                                action="#{bgrClima.iniciar()}">
+                                <f:ajax execute="@form" render="temperatura" />
+                            </h:commandButton>
+                        </a>
+                        
+                    </div>
+                </div>
+                            
+            <p:poll interval="1" listener="#{bgrClima.atualizarClima()}" update="formClima"/>
+            </h:form>
+        </section>
+        <!--Fim da seção CLIMA (Seção que exibe as variáveis ambientais)-->
+
+        <!--Ínicio da seção SOBRE NÓS (Seção que exibe uma breve descrição do trabalho e as informações dos integrantes)-->
+        <section class="sobre-nos section" id="sobre-nos">
+            <div class="container flex-center">
+                <h1 class="section-title-01">SOBRE NÓS</h1>
+                <h2 class="section-title-02">SOBRE NÓS</h2>
+                <div class="content flex-center">
+                    <div class="sobre-texto">
+                        <div class="descricao">
+                            <h3>Olá!</h3>
+                            <h4>Somos estudantes da Universidade Paulista - Sorocaba, desenvolvendo um projeto sobre um sistema de estação meteorológica para monitoramento de variáveis ambientais como parte da disciplina Atividades Práticas Supervisionadas.</h4>
+                        </div>
+                        <div class="sobre-integrantes"><h3>Integrantes</h3></div>
+                        <ul class="integrantes">
+                            <li class="list-item">
+                                <h3><span class="RA">RA: </span>N081EE0</h3> 
+                                <span>Gabriel Alves</span>
+                            </li>
+                            <li class="list-item">
+                                <h3><span class="RA">RA: </span>G813456</h3>
+                                <span>Nicholas Brites</span>
+                            </li>
+                            <li class="list-item">
+                                <h3><span class="RA">RA: </span>N052JJ7</h3>
+                                <span>Cassiano Augusto</span>
+                            </li>
+                            <li class="list-item">
+                                <h3><span class="RA">RA: </span>G7555D0</h3>
+                                <span>Murilo Maldonado</span>
+                            </li>
+                            <li class="list-item">
+                                <h3><span class="RA">RA: </span>G80DCC6</h3>
+                                <span>Vinicius Lopes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fim da seção SOBRE NÓS (Seção que exibe uma breve descrição do trabalho e as informações dos integrantes)-->
+        
+    </h:body>
+
+</html>

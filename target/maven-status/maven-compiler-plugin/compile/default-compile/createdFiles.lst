@@ -1,0 +1,4 @@
+com\mycompany\apsclima\resources\JakartaEE10Resource.class
+ManagedBeans\bgrClima.class
+ManagedBeans\bgrClima$1.class
+com\mycompany\apsclima\JakartaRestConfiguration.class
