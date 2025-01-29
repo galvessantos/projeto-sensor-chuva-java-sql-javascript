@@ -1,4 +1,4 @@
-# Estação Meteorológica | Java, JavaScript & SQL - 4° Projeto | Universidade Paulista
+# 🌦️ Estação Meteorológica 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/galvessantos/projeto-consumo-javascript/blob/main/LICENSE) 
 
 ---
