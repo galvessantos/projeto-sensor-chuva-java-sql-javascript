@@ -17,8 +17,6 @@ Por fim, desenvolvemos uma interface para que o usuário possa visualizar as inf
 
 https://github.com/user-attachments/assets/516388f1-7b6b-4c48-9dfd-477522596730
 
-![Image](https://github.com/user-attachments/assets/acf36e86-2629-4a03-a82e-80bcdc4e926c)
-
 # Tecnologias utilizadas
 
 ## Back end
