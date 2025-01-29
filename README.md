@@ -51,7 +51,7 @@ https://github.com/user-attachments/assets/516388f1-7b6b-4c48-9dfd-477522596730
 Antes de executar o projeto, você precisa ter instalado:
 
 - [Java JDK 11 ou superior](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- para que o projeto funcione corretamente, você precisará dos mesmos hardwares que utilizamos para o registro das variáveis. 
+- Para que o projeto funcione corretamente, você precisará dos mesmos hardwares que utilizamos para o registro das variáveis. 
   
 ---
 
